@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun - Warung UMKM Jatibarang</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-background dark:bg-darkbg text-accent dark:text-gray-200 font-inter antialiased min-h-screen flex flex-col">
+
+    <!-- Header Simple -->
+    <header class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center h-16 gap-4 border-b border-gray-100 dark:border-gray-800">
+                <a href="../index.html" class="flex items-center gap-2 text-primary">
+                    <i class="ph ph-storefront text-2xl"></i>
+                    <span class="font-poppins font-bold text-xl hidden md:block">Warung UMKM Jatibarang</span>
+                </a>
+                <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2 hidden md:block"></div>
+                <h1 class="font-poppins font-medium text-lg md:text-xl">Daftar Akun</h1>
+                <a href="../index.html" class="ml-auto text-sm text-gray-500 hover:text-primary transition-colors">Bantuan</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center py-10 px-4 bg-orange-50/50 dark:bg-darkbg">
+        <div class="bg-white dark:bg-darkcard w-full max-w-md rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
+            <div class="text-center mb-8">
+                <h2 class="font-poppins font-bold text-2xl mb-2">Daftar Sekarang</h2>
+                <p class="text-gray-500 text-sm">Bergabung dan dukung produk lokal UMKM Jatibarang</p>
+            </div>
+
+            <!-- Pesan Error/Sukses -->
+            <div id="alertBox" class="hidden mb-4 p-3 rounded-lg text-sm font-medium"></div>
+
+            <form id="registerForm" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nama Lengkap</label>
+                    <div class="relative">
+                        <i class="ph ph-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="name" required placeholder="Contoh: Budi Santoso" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg pl-10 pr-4 py-2.5 outline-none focus:border-primary transition-colors text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                    <div class="relative">
+                        <i class="ph ph-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="email" id="email" required placeholder="email@anda.com" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg pl-10 pr-4 py-2.5 outline-none focus:border-primary transition-colors text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Password</label>
+                    <div class="relative">
+                        <i class="ph ph-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="password" id="password" required placeholder="Minimal 6 karakter" minlength="6" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg pl-10 pr-10 py-2.5 outline-none focus:border-primary transition-colors text-sm">
+                        <button type="button" id="togglePassword" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" id="submitBtn" class="w-full btn-primary py-3 font-bold text-base flex justify-center items-center gap-2">
+                        <span>Daftar Akun</span>
+                        <!-- Loading spinner (hidden by default) -->
+                        <i class="ph ph-spinner animate-spin hidden" id="loadingSpinner"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6 text-center text-sm text-gray-500">
+                <p>Dengan mendaftar, Anda menyetujui <a href="#" class="text-primary hover:underline">Syarat & Ketentuan</a> kami.</p>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800 text-center">
+                <p class="text-sm text-gray-600 dark:text-gray-400">Sudah punya akun? <a href="login.html" class="text-primary font-bold hover:underline">Masuk di sini</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Load API Script -->
+    <script src="../js/api/config.js"></script>
+    <script src="../js/api/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Toggle Password Visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('password');
+            
+            togglePassword.addEventListener('click', function () {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="ph ph-eye"></i>' : '<i class="ph ph-eye-slash"></i>';
+            });
+        });
+    </script>
+</body>
+</html>
