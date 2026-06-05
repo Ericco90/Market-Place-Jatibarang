@@ -109,8 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         response = { status: 'success', role: 'buyer', url: 'profile.html' };
                     }
                 } else {
-                    // Implementasi nyata ke GAS...
-                    // response = await postToGAS('loginUser', { email, password });
+                    // Implementasi nyata ke GAS
+                    // Untuk tutorial ini kita asumsikan register masuk ke Sheet, 
+                    // tapi login kita buat dummy auto-success karena belum ada API verifikasi password di backend.gs
+                    response = { status: 'success', role: 'buyer', url: 'profile.html' };
                 }
 
                 if (response.status === 'success') {
