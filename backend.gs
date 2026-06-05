@@ -55,6 +55,25 @@ function doPost(e) {
 
 // --- HELPER FUNCTIONS ---
 
+function ensureSheetAndHeaders(sheetName, headers) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName(sheetName);
+  
+  // Jika sheet belum ada, buat otomatis
+  if (!sheet) {
+    sheet = ss.insertSheet(sheetName);
+  }
+  
+  // Jika sheet kosong (tidak ada header), tulis header
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(headers);
+    // Format header agar tebal
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold').setBackground('#f3f4f6');
+  }
+  
+  return sheet;
+}
+
 function getSheetData(sheetName) {
   const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(sheetName);
   if (!sheet) return [];
@@ -92,7 +111,9 @@ function getSellers() {
 }
 
 function registerUser(userData) {
-  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Users');
+  // Pastikan sheet Users ada dan memiliki header
+  const headers = ['id', 'nama', 'email', 'password', 'role', 'foto', 'tanggal_daftar'];
+  const sheet = ensureSheetAndHeaders('Users', headers);
   
   // Basic check if email exists (simplification)
   const existingUsers = getSheetData('Users');
@@ -120,7 +141,10 @@ function registerUser(userData) {
 }
 
 function createOrder(orderData) {
-  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Orders');
+  // Pastikan sheet Orders ada dan memiliki header
+  const headers = ['id', 'user_id', 'produk', 'total', 'status', 'tanggal'];
+  const sheet = ensureSheetAndHeaders('Orders', headers);
+  
   const id = 'ORD-' + new Date().getTime();
   const date = new Date().toISOString();
   
