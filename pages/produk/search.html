@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Produk - Warung UMKM Jatibarang</title>
+    <link rel="stylesheet" href="../../css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-background dark:bg-darkbg text-accent dark:text-gray-200 font-inter antialiased pb-24 md:pb-0 min-h-screen flex flex-col">
+
+    <!-- Header (Same as Index for Desktop, Simplified for Mobile) -->
+    <header class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4 gap-4">
+                <a href="../../index.html" class="flex items-center gap-2 flex-shrink-0 md:hidden">
+                    <i class="ph ph-arrow-left text-2xl text-gray-600 dark:text-gray-300"></i>
+                </a>
+                <a href="../../index.html" class="hidden md:flex items-center gap-2 flex-shrink-0">
+                    <div class="bg-primary text-white p-2 rounded-lg">
+                        <i class="ph ph-storefront text-2xl"></i>
+                    </div>
+                    <span class="font-poppins font-bold text-2xl text-primary">Warung UMKM Jatibarang</span>
+                </a>
+
+                <div class="flex-1 max-w-3xl">
+                    <div class="relative flex items-center w-full h-11 rounded-lg focus-within:shadow-lg bg-white overflow-hidden border border-gray-300 dark:border-gray-700 dark:bg-darkbg">
+                        <input class="peer h-full w-full outline-none text-sm text-gray-700 dark:text-gray-200 bg-transparent pr-2 pl-4" type="text" value="Kopi Gayo" placeholder="Cari..." /> 
+                        <button class="grid place-items-center h-full w-12 text-gray-400 hover:text-primary bg-gray-50 dark:bg-gray-800">
+                            <i class="ph ph-magnifying-glass text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-4 flex-shrink-0">
+                    <a href="../cart.html" class="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary">
+                        <i class="ph ph-shopping-cart text-2xl"></i>
+                        <span class="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-primary rounded-full">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6 flex-1 flex flex-col md:flex-row gap-6">
+        
+        <!-- Sidebar Filters -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <!-- Filter Button Mobile -->
+            <div class="md:hidden flex justify-between items-center mb-4">
+                <span class="font-medium">Menampilkan 120 produk</span>
+                <button class="btn-outline text-sm py-1.5 px-3 flex items-center gap-2">
+                    <i class="ph ph-faders"></i> Filter
+                </button>
+            </div>
+
+            <div class="hidden md:block bg-white dark:bg-darkcard rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-800 sticky top-24">
+                <h3 class="font-bold font-poppins text-lg border-b border-gray-100 dark:border-gray-800 pb-3 mb-4 flex items-center gap-2">
+                    <i class="ph ph-funnel text-primary"></i> Filter
+                </h3>
+                
+                <!-- Kategori -->
+                <div class="mb-6">
+                    <h4 class="font-medium mb-3">Kategori</h4>
+                    <div class="space-y-2 text-sm">
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox" class="accent-primary w-4 h-4" checked>
+                            <span class="group-hover:text-primary">Minuman (45)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox" class="accent-primary w-4 h-4">
+                            <span class="group-hover:text-primary">Biji Kopi (30)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox" class="accent-primary w-4 h-4">
+                            <span class="group-hover:text-primary">Alat Seduh (12)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Harga -->
+                <div class="mb-6">
+                    <h4 class="font-medium mb-3">Harga</h4>
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="relative flex-1">
+                            <span class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500 text-xs">Rp</span>
+                            <input type="number" placeholder="MIN" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-sm px-2 py-1.5 pl-6 outline-none focus:border-primary">
+                        </div>
+                        <span class="text-gray-400">-</span>
+                        <div class="relative flex-1">
+                            <span class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500 text-xs">Rp</span>
+                            <input type="number" placeholder="MAX" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-sm px-2 py-1.5 pl-6 outline-none focus:border-primary">
+                        </div>
+                    </div>
+                    <button class="w-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium text-sm py-2 rounded transition-colors">Terapkan</button>
+                </div>
+
+                <!-- Rating -->
+                <div class="mb-6">
+                    <h4 class="font-medium mb-3">Rating</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" class="accent-primary w-4 h-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" class="accent-primary w-4 h-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph ph-star text-gray-300"></i>
+                            </div>
+                            <span class="text-xs text-gray-500">ke atas</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- Search Results -->
+        <div class="flex-1">
+            <div class="hidden md:flex justify-between items-center mb-6">
+                <p class="text-gray-600 dark:text-gray-400">Menampilkan hasil untuk <span class="font-bold text-gray-900 dark:text-white">"Kopi Gayo"</span></p>
+                <div class="flex items-center gap-2 text-sm">
+                    <span class="text-gray-500">Urutkan:</span>
+                    <select class="bg-white dark:bg-darkcard border border-gray-200 dark:border-gray-700 rounded px-2 py-1 outline-none focus:border-primary">
+                        <option>Paling Sesuai</option>
+                        <option>Terbaru</option>
+                        <option>Terlaris</option>
+                        <option>Harga: Rendah ke Tinggi</option>
+                        <option>Harga: Tinggi ke Rendah</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                <!-- Card -->
+                <a href="detail.html" class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                    <div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Kopi Bubuk Asli Gayo 250gr Premium</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 45.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i><span>4.8</span><span>|</span><span>1.2k Terjual</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500"><i class="ph ph-map-pin"></i><span class="truncate">Aceh Tengah</span></div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Duplicate cards for layout -->
+                <a href="detail.html" class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                    <div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Biji Kopi Arabica Gayo Roasted 500gr</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 85.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i><span>4.9</span><span>|</span><span>800 Terjual</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500"><i class="ph ph-map-pin"></i><span class="truncate">Medan</span></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                    <div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Kopi Gayo Wine Process 200gr</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 120.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i><span>5.0</span><span>|</span><span>150 Terjual</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500"><i class="ph ph-map-pin"></i><span class="truncate">Banda Aceh</span></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                    <div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Kopi Gayo Peaberry (Kopi Lanang)</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 95.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i><span>4.7</span><span>|</span><span>320 Terjual</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500"><i class="ph ph-map-pin"></i><span class="truncate">Aceh Tengah</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="flex justify-center mt-10">
+                <div class="flex items-center gap-1">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 text-gray-400 cursor-not-allowed"><i class="ph ph-caret-left"></i></button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary transition-colors">2</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary transition-colors">3</button>
+                    <span class="px-2 text-gray-400">...</span>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary transition-colors">12</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary transition-colors"><i class="ph ph-caret-right"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

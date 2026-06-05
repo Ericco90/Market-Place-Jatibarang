@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Center - Warung UMKM Jatibarang</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-background dark:bg-darkbg text-accent dark:text-gray-200 font-inter antialiased min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white dark:bg-darkcard border-r border-gray-100 dark:border-gray-800 flex-shrink-0 hidden md:flex flex-col h-screen sticky top-0">
+        <div class="h-16 flex items-center justify-center border-b border-gray-100 dark:border-gray-800">
+            <a href="../index.html" class="flex items-center gap-2 text-primary">
+                <i class="ph-fill ph-storefront text-2xl"></i>
+                <span class="font-poppins font-bold text-xl">Seller Center</span>
+            </a>
+        </div>
+        
+        <div class="p-4 overflow-y-auto flex-1 no-scrollbar">
+            <div class="mb-6">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-3">Menu Utama</p>
+                <nav class="space-y-1">
+                    <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2 text-primary font-medium bg-orange-50 dark:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph-fill ph-squares-four text-xl"></i> Dashboard
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-shopping-bag text-xl"></i> Pesanan
+                        <span class="ml-auto bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">5</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-package text-xl"></i> Produk Saya
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-chart-line-up text-xl"></i> Statistik
+                    </a>
+                </nav>
+            </div>
+            
+            <div class="mb-6">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-3">Toko</p>
+                <nav class="space-y-1">
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-storefront text-xl"></i> Profil Toko
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-ticket text-xl"></i> Voucher Toko
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-gear text-xl"></i> Pengaturan
+                    </a>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="p-4 border-t border-gray-100 dark:border-gray-800">
+            <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-colors">
+                <i class="ph ph-sign-out text-xl"></i> Keluar
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden">
+        
+        <!-- Topbar -->
+        <header class="h-16 bg-white dark:bg-darkcard border-b border-gray-100 dark:border-gray-800 flex items-center justify-between px-6 flex-shrink-0">
+            <div class="flex items-center gap-4 md:hidden">
+                <button class="text-gray-500"><i class="ph ph-list text-2xl"></i></button>
+                <span class="font-poppins font-bold text-primary">Seller Center</span>
+            </div>
+            <h2 class="font-poppins font-bold text-lg hidden md:block">Dashboard Penjualan</h2>
+            
+            <div class="flex items-center gap-4">
+                <button class="text-gray-400 hover:text-primary"><i class="ph ph-bell text-xl"></i></button>
+                <div class="flex items-center gap-2 pl-4 border-l border-gray-200 dark:border-gray-700">
+                    <img src="https://placehold.co/100x100/333/fff?text=TK" class="w-8 h-8 rounded-full">
+                    <span class="text-sm font-medium hidden md:block">Toko Kopi Sejahtera</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="flex-1 overflow-y-auto p-4 md:p-6 pb-24 md:pb-6">
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white dark:bg-darkcard rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-500/10 text-blue-500 flex items-center justify-center">
+                            <i class="ph-fill ph-receipt text-xl"></i>
+                        </div>
+                        <span class="text-sm text-gray-500 font-medium">Pesanan Baru</span>
+                    </div>
+                    <div class="text-2xl font-bold font-poppins">12</div>
+                    <div class="text-xs text-green-500 mt-1 flex items-center gap-1"><i class="ph ph-trend-up"></i> +2 dari kemarin</div>
+                </div>
+
+                <div class="bg-white dark:bg-darkcard rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-lg bg-orange-50 dark:bg-primary/10 text-primary flex items-center justify-center">
+                            <i class="ph-fill ph-package text-xl"></i>
+                        </div>
+                        <span class="text-sm text-gray-500 font-medium">Perlu Dikirim</span>
+                    </div>
+                    <div class="text-2xl font-bold font-poppins">5</div>
+                    <div class="text-xs text-gray-400 mt-1">Segera proses pesanan ini</div>
+                </div>
+
+                <div class="bg-white dark:bg-darkcard rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-500/10 text-green-500 flex items-center justify-center">
+                            <i class="ph-fill ph-money text-xl"></i>
+                        </div>
+                        <span class="text-sm text-gray-500 font-medium">Pendapatan Bulan Ini</span>
+                    </div>
+                    <div class="text-2xl font-bold font-poppins text-green-600 dark:text-green-400">Rp 4.5M</div>
+                    <div class="text-xs text-green-500 mt-1 flex items-center gap-1"><i class="ph ph-trend-up"></i> +15% dari bulan lalu</div>
+                </div>
+
+                <div class="bg-white dark:bg-darkcard rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-500/10 text-purple-500 flex items-center justify-center">
+                            <i class="ph-fill ph-eye text-xl"></i>
+                        </div>
+                        <span class="text-sm text-gray-500 font-medium">Pengunjung Toko</span>
+                    </div>
+                    <div class="text-2xl font-bold font-poppins">1.2k</div>
+                    <div class="text-xs text-red-500 mt-1 flex items-center gap-1"><i class="ph ph-trend-down"></i> -5% dari minggu lalu</div>
+                </div>
+            </div>
+
+            <!-- Chart & To Do -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <!-- Chart -->
+                <div class="lg:col-span-2 bg-white dark:bg-darkcard rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-5">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold font-poppins text-lg">Grafik Penjualan</h3>
+                        <select class="bg-gray-50 dark:bg-darkbg border border-gray-200 dark:border-gray-700 rounded text-sm px-2 py-1 outline-none focus:border-primary">
+                            <option>7 Hari Terakhir</option>
+                            <option>Bulan Ini</option>
+                        </select>
+                    </div>
+                    <div class="h-64 w-full">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- To Do List -->
+                <div class="bg-white dark:bg-darkcard rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-5 flex flex-col">
+                    <h3 class="font-bold font-poppins text-lg mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">Daftar Tugas</h3>
+                    <div class="space-y-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Pesanan Belum Dibayar</span>
+                            <span class="font-bold text-blue-500">3</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Perlu Diproses</span>
+                            <span class="font-bold text-orange-500">5</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Dibatalkan Pembeli</span>
+                            <span class="font-bold text-red-500">1</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Produk Habis</span>
+                            <span class="font-bold text-gray-800 dark:text-gray-200">2</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Chat Belum Dibalas</span>
+                            <span class="font-bold text-green-500">4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="bg-white dark:bg-darkcard rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <div class="p-5 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                    <h3 class="font-bold font-poppins text-lg">Pesanan Terbaru</h3>
+                    <a href="#" class="text-sm text-primary hover:underline">Lihat Semua</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-gray-50/50 dark:bg-gray-800/30 text-gray-500 dark:text-gray-400 uppercase text-xs">
+                            <tr>
+                                <th class="px-5 py-3 font-medium">ID Pesanan</th>
+                                <th class="px-5 py-3 font-medium">Produk</th>
+                                <th class="px-5 py-3 font-medium">Total</th>
+                                <th class="px-5 py-3 font-medium">Status</th>
+                                <th class="px-5 py-3 font-medium">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                            <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/10 transition-colors">
+                                <td class="px-5 py-4">#ORD-20260601-01</td>
+                                <td class="px-5 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://placehold.co/40x40" class="rounded">
+                                        <span class="font-medium line-clamp-1 max-w-[150px]">Kopi Bubuk Asli Gayo</span>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-4 font-bold">Rp 90.000</td>
+                                <td class="px-5 py-4">
+                                    <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded text-xs font-bold">Perlu Dikirim</span>
+                                </td>
+                                <td class="px-5 py-4">
+                                    <button class="text-primary hover:underline font-medium">Kirim</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/50 dark:hover:bg-gray-800/10 transition-colors">
+                                <td class="px-5 py-4">#ORD-20260601-02</td>
+                                <td class="px-5 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://placehold.co/40x40" class="rounded">
+                                        <span class="font-medium line-clamp-1 max-w-[150px]">Kopi Gayo Peaberry</span>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-4 font-bold">Rp 190.000</td>
+                                <td class="px-5 py-4">
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs font-bold">Dikirim</span>
+                                </td>
+                                <td class="px-5 py-4">
+                                    <button class="text-gray-500 hover:underline font-medium">Detail</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Chart.js Setup for Sales Graph
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('salesChart').getContext('2d');
+            const isDarkMode = document.documentElement.classList.contains('dark');
+            const textColor = isDarkMode ? '#e5e7eb' : '#4b5563';
+            const gridColor = isDarkMode ? '#374151' : '#f3f4f6';
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
+                    datasets: [{
+                        label: 'Pendapatan (Juta Rp)',
+                        data: [1.2, 1.9, 1.5, 2.2, 1.8, 3.5, 4.2],
+                        borderColor: '#ff6b00',
+                        backgroundColor: 'rgba(255, 107, 0, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#ffffff',
+                        pointBorderColor: '#ff6b00',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: gridColor,
+                            },
+                            ticks: {
+                                color: textColor
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: textColor
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

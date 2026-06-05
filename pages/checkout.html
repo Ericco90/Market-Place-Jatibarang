@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Warung UMKM Jatibarang</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-background dark:bg-darkbg text-accent dark:text-gray-200 font-inter antialiased pb-24 md:pb-8 min-h-screen">
+
+    <!-- Header Simple -->
+    <header class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center h-16 gap-4">
+                <a href="cart.html" class="text-gray-600 dark:text-gray-300 hover:text-primary md:hidden">
+                    <i class="ph ph-arrow-left text-2xl"></i>
+                </a>
+                <a href="../index.html" class="hidden md:flex items-center gap-2 text-primary">
+                    <i class="ph ph-storefront text-2xl"></i>
+                    <span class="font-poppins font-bold text-xl">Warung UMKM Jatibarang</span>
+                </a>
+                <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2 hidden md:block"></div>
+                <h1 class="font-poppins font-medium text-lg md:text-xl">Checkout</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6 flex flex-col lg:flex-row gap-6 max-w-6xl">
+        
+        <!-- Main Form Content -->
+        <div class="w-full lg:w-8/12 flex flex-col gap-4">
+            
+            <!-- Shipping Address -->
+            <div class="bg-white dark:bg-darkcard p-5 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="flex items-center gap-2 mb-4 text-primary font-poppins font-bold">
+                    <i class="ph-fill ph-map-pin-line text-xl"></i>
+                    <h2>Alamat Pengiriman</h2>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="font-bold">Budi Santoso <span class="text-gray-400 font-normal ml-2">081234567890</span></div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Jl. Merdeka No. 45, RT 01/RW 02, Kel. Sukamaju, Kec. Maju Jaya, Kab. Sleman, DI Yogyakarta, 55281</p>
+                </div>
+                
+                <button class="btn-outline text-sm py-2">Ubah Alamat</button>
+            </div>
+
+            <!-- Product Details per Seller -->
+            <div class="bg-white dark:bg-darkcard rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex items-center gap-2 bg-gray-50/50 dark:bg-gray-800/30 font-bold">
+                    <i class="ph-fill ph-storefront text-gray-400"></i>
+                    Toko Kopi Sejahtera
+                </div>
+                
+                <!-- Items -->
+                <div class="p-4 border-b border-gray-100 dark:border-gray-800 flex gap-4">
+                    <div class="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                        <img src="https://placehold.co/100x100/eee/999" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-medium text-sm md:text-base line-clamp-1 mb-1">Kopi Bubuk Asli Gayo 250gr Premium</div>
+                        <div class="text-xs text-gray-500 mb-2">Variasi: 250gr (Bubuk Halus)</div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-primary font-bold">Rp 45.000</span>
+                            <span class="text-gray-500">x 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Options -->
+                <div class="p-4 border-b border-gray-100 dark:border-gray-800">
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Opsi Pengiriman</label>
+                    <select class="w-full bg-white dark:bg-darkbg border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 outline-none focus:border-primary text-sm">
+                        <option value="reguler">Reguler (J&T, SiCepat, JNE) - Rp 15.000 (2-3 Hari)</option>
+                        <option value="hemat">Hemat (SiCepat HALU) - Rp 10.000 (3-5 Hari)</option>
+                        <option value="kargo">Kargo (JNE Trucking) - Rp 35.000 (5-7 Hari)</option>
+                    </select>
+                </div>
+                
+                <!-- Order Note -->
+                <div class="p-4 flex items-center gap-4 bg-gray-50/30 dark:bg-gray-800/10">
+                    <label class="text-sm font-medium text-gray-600 dark:text-gray-400 whitespace-nowrap">Pesan:</label>
+                    <input type="text" placeholder="(Opsional) Tinggalkan pesan untuk penjual..." class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 focus:border-primary outline-none py-1 text-sm">
+                </div>
+            </div>
+            
+            <!-- Payment Method -->
+            <div class="bg-white dark:bg-darkcard p-5 md:p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="flex items-center gap-2 mb-4 text-primary font-poppins font-bold">
+                    <i class="ph-fill ph-wallet text-xl"></i>
+                    <h2>Metode Pembayaran</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <label class="border border-primary rounded-lg p-3 flex items-center justify-between cursor-pointer bg-orange-50/50 dark:bg-primary/10">
+                        <div class="flex items-center gap-3">
+                            <i class="ph-fill ph-qr-code text-2xl text-primary"></i>
+                            <span class="font-medium text-sm">QRIS</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle text-primary text-xl"></i>
+                    </label>
+                    
+                    <label class="border border-gray-200 dark:border-gray-700 hover:border-primary rounded-lg p-3 flex items-center justify-between cursor-pointer transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i class="ph-fill ph-bank text-2xl text-blue-500"></i>
+                            <span class="font-medium text-sm">Transfer Bank (Virtual Account)</span>
+                        </div>
+                        <div class="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                    </label>
+
+                    <label class="border border-gray-200 dark:border-gray-700 hover:border-primary rounded-lg p-3 flex items-center justify-between cursor-pointer transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 bg-blue-500 rounded text-white flex items-center justify-center font-bold text-[10px]">DANA</div>
+                            <span class="font-medium text-sm">DANA</span>
+                        </div>
+                        <div class="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                    </label>
+
+                    <label class="border border-gray-200 dark:border-gray-700 hover:border-primary rounded-lg p-3 flex items-center justify-between cursor-pointer transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i class="ph-fill ph-money text-2xl text-green-500"></i>
+                            <span class="font-medium text-sm">Bayar di Tempat (COD)</span>
+                        </div>
+                        <div class="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Order Summary & Checkout -->
+        <div class="w-full lg:w-4/12">
+            <div class="bg-white dark:bg-darkcard rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-5 sticky top-24">
+                <h3 class="font-poppins font-bold text-lg mb-4">Rincian Pembayaran</h3>
+                
+                <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-6">
+                    <div class="flex justify-between items-center">
+                        <span>Subtotal untuk Produk</span>
+                        <span>Rp 90.000</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>Subtotal Pengiriman</span>
+                        <span>Rp 15.000</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>Biaya Layanan</span>
+                        <span>Rp 1.000</span>
+                    </div>
+                </div>
+                
+                <hr class="border-gray-100 dark:border-gray-800 my-4">
+                
+                <div class="flex justify-between items-end mb-6">
+                    <span class="font-bold text-gray-800 dark:text-gray-200">Total Pembayaran</span>
+                    <span class="font-bold text-2xl text-primary">Rp 106.000</span>
+                </div>
+                
+                <button class="btn-primary w-full py-3 font-bold text-lg mb-3">
+                    Buat Pesanan
+                </button>
+                <p class="text-[10px] text-center text-gray-500">Dengan membuat pesanan, Anda menyetujui Syarat & Ketentuan Warung UMKM Jatibarang.</p>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

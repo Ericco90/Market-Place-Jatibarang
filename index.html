@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung UMKM Jatibarang - Belanja Produk Lokal Mudah & Aman</title>
+    <meta name="description" content="Warung UMKM Jatibarang adalah marketplace terbaik untuk menemukan produk-produk lokal berkualitas dari UMKM, Koperasi, dan BUMDes.">
+    <link rel="stylesheet" href="./css/output.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons (Alternative to FontAwesome for modern look) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-background dark:bg-darkbg text-accent dark:text-gray-200 font-inter antialiased pb-16 md:pb-0">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <!-- Top Bar (Desktop) -->
+            <div class="hidden md:flex justify-between items-center py-2 text-sm text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800">
+                <div class="flex items-center gap-4">
+                    <a href="./seller/dashboard.html" class="hover:text-primary transition-colors">Mulai Berjualan</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-primary transition-colors">Download Aplikasi</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="flex items-center gap-1 hover:text-primary transition-colors">
+                        <i class="ph ph-moon"></i> Dark Mode
+                    </button>
+                    <a href="#" class="hover:text-primary transition-colors">Bantuan</a>
+                </div>
+            </div>
+
+            <!-- Main Navbar -->
+            <div class="flex items-center justify-between py-4 gap-4 md:gap-8">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+                    <div class="bg-primary text-white p-2 rounded-lg">
+                        <i class="ph ph-storefront text-2xl"></i>
+                    </div>
+                    <span class="font-poppins font-bold text-2xl hidden md:block text-primary">Warung UMKM Jatibarang</span>
+                </a>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-3xl">
+                    <div class="relative flex items-center w-full h-11 rounded-lg focus-within:shadow-lg bg-white overflow-hidden border border-gray-300 dark:border-gray-700 dark:bg-darkbg transition-shadow duration-300">
+                        <input
+                        class="peer h-full w-full outline-none text-sm text-gray-700 dark:text-gray-200 bg-transparent pr-2 pl-4"
+                        type="text"
+                        id="search"
+                        placeholder="Cari produk, toko, atau kategori..." /> 
+                        <button class="grid place-items-center h-full w-12 text-gray-400 hover:text-primary transition-colors bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <i class="ph ph-magnifying-glass text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-4 flex-shrink-0">
+                    <a href="pages/cart.html" class="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                        <i class="ph ph-shopping-cart text-2xl"></i>
+                        <span class="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-primary rounded-full">3</span>
+                    </a>
+                    
+                    <a href="#" class="hidden md:block p-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                        <i class="ph ph-bell text-2xl"></i>
+                    </a>
+
+                    <!-- User Menu -->
+                    <div class="hidden md:flex items-center gap-3 ml-2 pl-4 border-l border-gray-200 dark:border-gray-700">
+                        <a href="user/login.html" class="font-medium text-primary hover:text-orange-600 transition-colors">Masuk</a>
+                        <a href="user/register.html" class="btn-primary py-1.5">Daftar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        
+        <!-- Banner Slider (Placeholder) -->
+        <section class="mb-8 rounded-2xl overflow-hidden shadow-sm relative group bg-gray-200 dark:bg-gray-800 aspect-[21/9] md:aspect-[3/1]">
+            <!-- This would be an image in reality -->
+            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-orange-500 to-primary text-white">
+                <div class="text-center px-4">
+                    <h2 class="text-2xl md:text-5xl font-poppins font-bold mb-2 md:mb-4">Promo Kemerdekaan UMKM</h2>
+                    <p class="md:text-xl mb-4 md:mb-6">Diskon hingga 70% untuk produk lokal pilihan!</p>
+                    <button class="bg-white text-primary font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition-colors">Belanja Sekarang</button>
+                </div>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <button class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 dark:bg-black/50 text-gray-800 dark:text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                <i class="ph ph-caret-left text-xl"></i>
+            </button>
+            <button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 dark:bg-black/50 text-gray-800 dark:text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                <i class="ph ph-caret-right text-xl"></i>
+            </button>
+        </section>
+
+        <!-- Categories -->
+        <section class="mb-8">
+            <h3 class="font-poppins font-bold text-lg md:text-xl mb-4">Kategori Pilihan</h3>
+            <div class="flex overflow-x-auto no-scrollbar gap-4 pb-2">
+                <!-- Category Item -->
+                <a href="#" class="flex flex-col items-center min-w-[80px] md:min-w-[100px] group">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white dark:bg-darkcard shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 group-hover:border-primary group-hover:shadow-md transition-all">
+                        <i class="ph ph-t-shirt text-3xl text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors"></i>
+                    </div>
+                    <span class="text-xs md:text-sm text-center font-medium">Pakaian</span>
+                </a>
+                
+                <a href="#" class="flex flex-col items-center min-w-[80px] md:min-w-[100px] group">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white dark:bg-darkcard shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 group-hover:border-primary group-hover:shadow-md transition-all">
+                        <i class="ph ph-bowl-food text-3xl text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors"></i>
+                    </div>
+                    <span class="text-xs md:text-sm text-center font-medium">Makanan</span>
+                </a>
+
+                <a href="#" class="flex flex-col items-center min-w-[80px] md:min-w-[100px] group">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white dark:bg-darkcard shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 group-hover:border-primary group-hover:shadow-md transition-all">
+                        <i class="ph ph-laptop text-3xl text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors"></i>
+                    </div>
+                    <span class="text-xs md:text-sm text-center font-medium">Elektronik</span>
+                </a>
+
+                <a href="#" class="flex flex-col items-center min-w-[80px] md:min-w-[100px] group">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white dark:bg-darkcard shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 group-hover:border-primary group-hover:shadow-md transition-all">
+                        <i class="ph ph-armchair text-3xl text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors"></i>
+                    </div>
+                    <span class="text-xs md:text-sm text-center font-medium">Perabotan</span>
+                </a>
+
+                <a href="#" class="flex flex-col items-center min-w-[80px] md:min-w-[100px] group">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white dark:bg-darkcard shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 group-hover:border-primary group-hover:shadow-md transition-all">
+                        <i class="ph ph-plant text-3xl text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors"></i>
+                    </div>
+                    <span class="text-xs md:text-sm text-center font-medium">Pertanian</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Flash Sale -->
+        <section class="mb-8 bg-white dark:bg-darkcard rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-4">
+                    <h3 class="font-poppins font-bold text-lg md:text-2xl text-primary flex items-center gap-2">
+                        <i class="ph-fill ph-lightning"></i> Flash Sale
+                    </h3>
+                    <div class="hidden md:flex items-center gap-1 font-bold">
+                        <span class="bg-black text-white px-2 py-1 rounded">02</span> :
+                        <span class="bg-black text-white px-2 py-1 rounded">45</span> :
+                        <span class="bg-black text-white px-2 py-1 rounded">12</span>
+                    </div>
+                </div>
+                <a href="#" class="text-sm font-medium text-gray-500 hover:text-primary">Lihat Semua</a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
+                <!-- Product Card Template -->
+                <div class="group flex flex-col bg-white dark:bg-darkbg rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <!-- Image placeholder -->
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400">
+                            <i class="ph ph-image text-4xl"></i>
+                        </div>
+                        <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            -50%
+                        </div>
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Kopi Bubuk Asli Gayo 250gr Premium</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 45.000</div>
+                            <div class="text-xs text-gray-400 line-through">Rp 90.000</div>
+                            <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <div class="text-[10px] text-gray-500 mt-1">Sisa 5 barang</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate for visual -->
+                <div class="group flex flex-col bg-white dark:bg-darkbg rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400">
+                            <i class="ph ph-image text-4xl"></i>
+                        </div>
+                        <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            -20%
+                        </div>
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Keripik Pisang Coklat Lumer</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 16.000</div>
+                            <div class="text-xs text-gray-400 line-through">Rp 20.000</div>
+                            <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-primary h-1.5 rounded-full" style="width: 30%"></div>
+                            </div>
+                            <div class="text-[10px] text-gray-500 mt-1">Terjual 120</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more cards as needed to fill the row -->
+                 <div class="group hidden md:flex flex-col bg-white dark:bg-darkbg rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400">
+                            <i class="ph ph-image text-4xl"></i>
+                        </div>
+                        <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            -15%
+                        </div>
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Madu Hutan Liar Murni 500ml</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 85.000</div>
+                            <div class="text-xs text-gray-400 line-through">Rp 100.000</div>
+                            <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-primary h-1.5 rounded-full" style="width: 50%"></div>
+                            </div>
+                            <div class="text-[10px] text-gray-500 mt-1">Terjual 50</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rekomendasi Produk -->
+        <section class="mb-8">
+            <h3 class="font-poppins font-bold text-lg md:text-xl mb-4 px-2 border-l-4 border-primary">Rekomendasi Untukmu</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
+                <!-- Standard Product Card -->
+                <div class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Baju Batik Pria Lengan Pendek Modern</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 125.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i>
+                                <span>4.8</span>
+                                <span>|</span>
+                                <span>Terjual 1k+</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph ph-map-pin"></i>
+                                <span class="truncate">Kab. Sleman</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skeleton Card Example (to show loading state later) -->
+                <div class="flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 p-3 gap-3 hidden">
+                    <div class="skeleton aspect-square rounded-lg w-full"></div>
+                    <div class="skeleton h-4 w-full"></div>
+                    <div class="skeleton h-4 w-3/4"></div>
+                    <div class="skeleton h-5 w-1/2 mt-2"></div>
+                    <div class="skeleton h-3 w-1/3"></div>
+                </div>
+                
+                <!-- Repeat standard cards for layout -->
+                <div class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Sepatu Sneakers Lokal Pria Wanita</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 189.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i>
+                                <span>4.9</span>
+                                <span>|</span>
+                                <span>Terjual 500+</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph ph-map-pin"></i>
+                                <span class="truncate">Kota Bandung</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Tas Anyaman Pandan Kerajinan Tangan</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 75.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i>
+                                <span>4.7</span>
+                                <span>|</span>
+                                <span>Terjual 250</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph ph-map-pin"></i>
+                                <span class="truncate">Kab. Tasikmalaya</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group flex flex-col bg-white dark:bg-darkcard rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <img src="https://placehold.co/400x400/eee/999?text=Product" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3 flex flex-col flex-1">
+                        <h4 class="text-sm line-clamp-2 mb-1 group-hover:text-primary transition-colors">Sambal Roa Manado Asli Botol Kaca</h4>
+                        <div class="mt-auto">
+                            <div class="font-bold text-primary text-base">Rp 35.000</div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph-fill ph-star text-yellow-400"></i>
+                                <span>5.0</span>
+                                <span>|</span>
+                                <span>Terjual 2k+</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                                <i class="ph ph-map-pin"></i>
+                                <span class="truncate">Kota Manado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8">
+                <button class="btn-outline">Muat Lebih Banyak</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation (Mobile Only) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-darkcard border-t border-gray-100 dark:border-gray-800 flex justify-between items-center px-6 py-2 pb-safe z-50">
+        <a href="index.html" class="flex flex-col items-center p-1 text-primary">
+            <i class="ph-fill ph-house text-2xl"></i>
+            <span class="text-[10px] font-medium mt-1">Beranda</span>
+        </a>
+        <a href="#" class="flex flex-col items-center p-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="ph ph-squares-four text-2xl"></i>
+            <span class="text-[10px] font-medium mt-1">Kategori</span>
+        </a>
+        <a href="pages/cart.html" class="flex flex-col items-center p-1 text-gray-400 hover:text-primary transition-colors relative">
+            <i class="ph ph-shopping-cart text-2xl"></i>
+            <span class="absolute top-0 right-2 w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-[10px] font-medium mt-1">Keranjang</span>
+        </a>
+        <a href="user/profile.html" class="flex flex-col items-center p-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="ph ph-user text-2xl"></i>
+            <span class="text-[10px] font-medium mt-1">Akun</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-darkcard border-t border-gray-200 dark:border-gray-800 mt-12 pt-12 pb-24 md:pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-4">
+                        <div class="bg-primary text-white p-2 rounded-lg">
+                            <i class="ph ph-storefront text-xl"></i>
+                        </div>
+                        <span class="font-poppins font-bold text-xl text-primary">Warung UMKM Jatibarang</span>
+                    </a>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Platform marketplace terpercaya untuk memajukan UMKM, Koperasi, dan produk lokal Indonesia.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Layanan Pelanggan</h4>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li><a href="#" class="hover:text-primary">Bantuan</a></li>
+                        <li><a href="#" class="hover:text-primary">Cara Pembelian</a></li>
+                        <li><a href="#" class="hover:text-primary">Pengembalian Barang</a></li>
+                        <li><a href="#" class="hover:text-primary">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Jelajahi Warung UMKM Jatibarang</h4>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li><a href="#" class="hover:text-primary">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-primary">Karir</a></li>
+                        <li><a href="#" class="hover:text-primary">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-primary">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ph-fill ph-facebook-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ph-fill ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ph-fill ph-twitter-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-800 pt-6 text-center text-sm text-gray-500">
+                &copy; 2026 Warung UMKM Jatibarang. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

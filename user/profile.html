@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - Warung UMKM Jatibarang</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-background dark:bg-darkbg text-accent dark:text-gray-200 font-inter antialiased pb-24 md:pb-0 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 gap-4">
+                <a href="../index.html" class="flex items-center gap-2 text-primary">
+                    <i class="ph ph-storefront text-2xl"></i>
+                    <span class="font-poppins font-bold text-xl hidden md:block">Warung UMKM Jatibarang</span>
+                </a>
+                
+                <div class="flex items-center gap-4">
+                    <a href="../pages/cart.html" class="relative text-gray-600 dark:text-gray-300 hover:text-primary">
+                        <i class="ph ph-shopping-cart text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary">
+                        <i class="ph ph-bell text-2xl"></i>
+                    </a>
+                    <div class="flex items-center gap-2 ml-2 pl-4 border-l border-gray-200 dark:border-gray-700">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">BS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6 flex-1 flex flex-col md:flex-row gap-6 max-w-6xl">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <div class="bg-white dark:bg-darkcard rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100 dark:border-gray-800">
+                    <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">BS</div>
+                    <div>
+                        <h3 class="font-bold text-sm">Budi Santoso</h3>
+                        <p class="text-xs text-gray-500"><i class="ph-fill ph-pencil-simple text-primary"></i> Ubah Profil</p>
+                    </div>
+                </div>
+                
+                <nav class="space-y-1">
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 text-primary font-medium bg-orange-50 dark:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-user text-xl"></i> Akun Saya
+                    </a>
+                    <a href="pesanan.html" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-receipt text-xl"></i> Pesanan Saya
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-bell text-xl"></i> Notifikasi
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-orange-50 dark:hover:bg-primary/10 rounded-lg transition-colors">
+                        <i class="ph ph-star text-xl"></i> Ulasan Saya
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content (Profile Edit) -->
+        <div class="flex-1">
+            <div class="bg-white dark:bg-darkcard rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <div class="p-6 border-b border-gray-100 dark:border-gray-800">
+                    <h2 class="font-poppins font-bold text-lg">Profil Saya</h2>
+                    <p class="text-sm text-gray-500">Kelola informasi profil Anda untuk mengontrol, melindungi dan mengamankan akun</p>
+                </div>
+                
+                <div class="p-6 flex flex-col-reverse md:flex-row gap-8">
+                    <div class="flex-1 flex flex-col gap-5">
+                        <div class="flex items-center">
+                            <label class="w-1/3 text-sm text-gray-500 font-medium text-right pr-4">Username</label>
+                            <div class="w-2/3 text-sm font-medium">budisantoso_99</div>
+                        </div>
+                        <div class="flex items-center">
+                            <label class="w-1/3 text-sm text-gray-500 font-medium text-right pr-4">Nama</label>
+                            <input type="text" value="Budi Santoso" class="w-2/3 bg-white dark:bg-darkbg border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 text-sm outline-none focus:border-primary">
+                        </div>
+                        <div class="flex items-center">
+                            <label class="w-1/3 text-sm text-gray-500 font-medium text-right pr-4">Email</label>
+                            <div class="w-2/3 text-sm">bu******@gmail.com <a href="#" class="text-primary text-xs ml-2 hover:underline">Ubah</a></div>
+                        </div>
+                        <div class="flex items-center">
+                            <label class="w-1/3 text-sm text-gray-500 font-medium text-right pr-4">Nomor Telepon</label>
+                            <div class="w-2/3 text-sm">********890 <a href="#" class="text-primary text-xs ml-2 hover:underline">Ubah</a></div>
+                        </div>
+                        <div class="flex items-center">
+                            <label class="w-1/3 text-sm text-gray-500 font-medium text-right pr-4">Jenis Kelamin</label>
+                            <div class="w-2/3 flex items-center gap-4 text-sm">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="gender" class="accent-primary" checked> Laki-laki</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="gender" class="accent-primary"> Perempuan</label>
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-1/3"></div>
+                            <button class="btn-primary py-2 w-32">Simpan</button>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/3 flex flex-col items-center border-b md:border-b-0 md:border-l border-gray-100 dark:border-gray-800 pb-8 md:pb-0 md:pl-8">
+                        <div class="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center font-bold text-4xl mb-4">BS</div>
+                        <button class="btn-outline text-sm py-2 w-full mb-3">Pilih Gambar</button>
+                        <p class="text-xs text-gray-500 text-center">Ukuran gambar: maks. 1 MB<br>Format gambar: .JPEG, .PNG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
