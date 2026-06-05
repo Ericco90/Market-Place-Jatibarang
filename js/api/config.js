@@ -4,10 +4,10 @@
  */
 
 const API_CONFIG = {
-    // TODO: Ganti URL di bawah dengan URL Web App hasil deploy Google Apps Script Anda.
+    // URL Web App hasil deploy Google Apps Script
     BASE_URL: 'https://script.google.com/macros/s/AKfycbzqT1xN5jIZ0_VU5L9oVyYvc-z6D37qfeST6U3Qqs305tcrgNWeIltigQhYGbSgYOBWwQ/exec',
     
-    // Header default untuk request (perhatikan bahwa GAS sering mengalami isu CORS jika menggunakan header complex)
+    // Header default untuk request
     HEADERS: {
         'Content-Type': 'text/plain;charset=utf-8',
     }

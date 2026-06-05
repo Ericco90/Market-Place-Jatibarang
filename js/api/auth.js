@@ -48,9 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             toggleLoading('submitBtn', 'loadingSpinner', true);
 
-            // Simulasi Proses (Karena Google Apps Script belum dideploy nyata oleh user)
-            // Dalam implementasi nyata, ubah `useMock = false` jika GAS sudah siap.
-            const useMock = true; 
+            // Set false agar menggunakan Google Apps Script nyata
+            const useMock = false; 
 
             try {
                 let response;
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             toggleLoading('submitBtn', 'loadingSpinner', true);
 
-            const useMock = true;
+            const useMock = false;
 
             try {
                 let response;
